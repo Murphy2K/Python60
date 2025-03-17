@@ -2,17 +2,29 @@ import functions
 import FreeSimpleGUI as sg
 import time
 
+import os
+#Teeb todos.txt faili KUI seda ei ole olemas.
+if not os.path.exists("todos.txt"):
+    with open("todos.txt", "w") as file:
+        pass
+
 sg.theme("LightBrown13")
 
 clock = sg.Text("", key="clock")
 label = sg.Text("Type in a to-do: ")
 input_box = sg.InputText(tooltip="Enter todo", key="todo")
-add_button = sg.Button("Add")
+add_button = sg.Button("Lisa", key="Add", mouseover_colors="LightBlue2", size=10)
 list_box = sg.Listbox(values=functions.get_todos(), key="todos", 
                     enable_events=True, size=[45,10])
-edit_button = sg.Button("Edit")
-complete_button = sg.Button("Complete")
-exit_button = sg.Button("Exit")
+edit_button = sg.Button("Muuda", key="Edit")
+complete_button = sg.Button("Valmis", key="Complete")
+exit_button = sg.Button("Välju", key="Exit")
+
+
+"""
+nuppudele ei pea lisama key=...  kui all see case on sama sõna mis on nupul nimeks
+"""
+
 
 window = sg.Window("My To-Do app", 
                     layout=[[clock],
