@@ -1,6 +1,5 @@
 Test1
 test3
 test1
-Test111
-uusViimane
 Päris viimane
+Nii
