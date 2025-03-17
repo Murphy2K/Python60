@@ -11,7 +11,7 @@ if not os.path.exists("todos.txt"):
 sg.theme("LightBrown13")
 
 clock = sg.Text("", key="clock")
-label = sg.Text("Type in a to-do: ")
+label = sg.Text("Sisesta to-do: ")
 input_box = sg.InputText(tooltip="Enter todo", key="todo")
 add_button = sg.Button("Lisa", key="Add", mouseover_colors="LightBlue2", size=10)
 list_box = sg.Listbox(values=functions.get_todos(), key="todos", 
@@ -80,7 +80,6 @@ while True:
         case 'todos':
             window['todo'].update(value=values['todos'][0])
         
-
         case sg.WIN_CLOSED:
             break
 
