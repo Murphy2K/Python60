@@ -10,6 +10,11 @@ if not os.path.exists("todos.txt"):
 
 sg.theme("LightBrown13")
 
+
+
+
+
+
 clock = sg.Text("", key="clock")
 label = sg.Text("Sisesta to-do: ")
 input_box = sg.InputText(tooltip="Enter todo", key="todo")
